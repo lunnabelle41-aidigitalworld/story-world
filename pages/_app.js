@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false);
@@ -298,7 +299,7 @@ function MyApp({ Component, pageProps }) {
           <div className="pt-8 mt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} Nexus Storytelling Platform. All rights reserved.
+                {new Date().getFullYear()} Nexus Storytelling Platform. All rights reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <Link href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
@@ -315,6 +316,7 @@ function MyApp({ Component, pageProps }) {
           </div>
         </div>
       </footer>
+      <Analytics />
     </>
   );
 }
