@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexus.com/sitemap.xml
+Sitemap: https://story-world-delta.vercel.app/sitemap.xml
