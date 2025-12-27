@@ -1,6 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the AdSenseAd component with no SSR
+const AdSenseAd = dynamic(() => import('../components/AdSenseAd'), {
+  ssr: false,
+});
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -257,6 +263,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
+      {/* Header Ad */}
+      <div className="container mx-auto px-4 py-4">
+        <AdSenseAd />
+      </div>
       <Head>
         <title>Nexus | The World's Premier Futuristic Storytelling Platform</title>
         <meta name="description" content="Discover immersive science fiction stories in multiple languages. Explore quantum fiction, cyberpunk, time travel, and dystopian narratives from visionary authors worldwide." />
@@ -523,13 +533,11 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="text-center mt-16">
-            <Link href="/stories">
-              <button className="px-8 py-4 bg-gray-800 hover:bg-gray-700 rounded-full font-bold text-lg border border-gray-700 transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/50">
-                Explore Full Collection
-              </button>
-            </Link>
+          {/* Second Ad Placement - Middle of Featured Stories */}
+          <div className="w-full mt-12 mb-4">
+            <AdSenseAd className="my-12" />
           </div>
+          
         </div>
       </section>
 
@@ -782,6 +790,39 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Third Ad Placement - Before Footer */}
+      <div className="py-12 bg-gray-900/50">
+        <div className="container mx-auto px-4">
+          <AdSenseAd className="my-12" />
+        </div>
+      </div>
+      
+      {/* Footer Ad */}
+      <div className="py-12 bg-gray-900/50">
+        <div className="container mx-auto px-4">
+          <AdSenseAd />
+        </div>
+      </div>
     </div>
+    
+    {/* Footer */}
+    <footer className="py-12 bg-gray-900/50">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-lg text-gray-400 mb-4 md:mb-0">
+            &copy; 2023 Nexus. All rights reserved.
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/terms">
+              <a className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Terms of Service</a>
+            </Link>
+            <Link href="/privacy">
+              <a className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Privacy Policy</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
