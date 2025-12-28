@@ -3,10 +3,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
-// Dynamically import the AdSenseAd component with no SSR
-const AdSenseAd = dynamic(() => import('../components/AdSenseAd'), {
-  ssr: false,
-});
+// Dynamically import AdSenseAd component
+const AdSenseAd = dynamic(() => import('../components/AdSenseAd'), { ssr: false });
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -265,7 +263,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
       {/* Header Ad */}
       <div className="container mx-auto px-4 py-4">
-        <AdSenseAd />
+        <AdSenseAd slot="2228311077" />
       </div>
       <Head>
         <title>Nexus | The World's Premier Futuristic Storytelling Platform</title>
@@ -535,7 +533,7 @@ export default function Home() {
           
           {/* Second Ad Placement - Middle of Featured Stories */}
           <div className="w-full mt-12 mb-4">
-            <AdSenseAd className="my-12" />
+            <AdSenseAd slot="9340514332" className="my-12" />
           </div>
           
         </div>
@@ -794,35 +792,41 @@ export default function Home() {
       {/* Third Ad Placement - Before Footer */}
       <div className="py-12 bg-gray-900/50">
         <div className="container mx-auto px-4">
-          <AdSenseAd className="my-12" />
+          <AdSenseAd 
+            slot="9340514332" 
+            format="auto"
+            className="my-12"
+            style={{ display: 'block', minHeight: '280px' }}
+          />
         </div>
       </div>
       
       {/* Footer Ad */}
       <div className="py-12 bg-gray-900/50">
         <div className="container mx-auto px-4">
-          <AdSenseAd />
+          <AdSenseAd 
+            slot="2228311077" 
+            format="auto"
+            className="my-12"
+            style={{ display: 'block', minHeight: '280px' }}
+          />
         </div>
       </div>
-    </div>
     
-    {/* Footer */}
-    <footer className="py-12 bg-gray-900/50">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-lg text-gray-400 mb-4 md:mb-0">
-            &copy; 2023 Nexus. All rights reserved.
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/terms">
-              <a className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Terms of Service</a>
-            </Link>
-            <Link href="/privacy">
-              <a className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Privacy Policy</a>
-            </Link>
+      {/* Footer */}
+      <footer className="py-12 bg-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-lg text-gray-400 mb-4 md:mb-0">
+              &copy; 2023 Nexus. All rights reserved.
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/terms" className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Terms of Service</Link>
+              <Link href="/privacy" className="text-lg text-gray-400 hover:text-gray-300 transition-colors">Privacy Policy</Link>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }
