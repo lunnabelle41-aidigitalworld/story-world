@@ -240,7 +240,7 @@ export default function TheTimeGarden() {
           
           {/* Continue Reading */}
           <div className="text-center">
-            <Link href="/premium-stories">
+            <Link href="/stories">
               <button className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full font-bold text-lg hover:from-cyan-500 hover:to-purple-500 transition-all duration-300">
                 Explore More Premium Stories
               </button>

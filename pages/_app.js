@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     setIsMounted(true);
@@ -16,9 +17,12 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8040019263366199"
-          crossOrigin="anonymous"></script>
       </Head>
+      <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8040019263366199"
+        crossOrigin="anonymous"
+        strategy="beforeInteractive"
+      />
       <Script
         src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
         strategy="beforeInteractive"
@@ -97,17 +101,14 @@ function MyApp({ Component, pageProps }) {
               <Link href="/stories" className="text-gray-300 hover:text-cyan-400 transition-colors">
                 Stories
               </Link>
+              <Link href="/library" className="text-gray-300 hover:text-blue-400 transition-colors">
+                Library
+              </Link>
               <Link href="/image-stories" className="text-gray-300 hover:text-purple-400 transition-colors">
                 Visual Stories
               </Link>
-              <Link href="/premium-stories" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Premium Stories
-              </Link>
               <Link href="/religious" className="text-gray-300 hover:text-amber-400 transition-colors">
                 Religious
-              </Link>
-              <Link href="/library" className="text-gray-300 hover:text-blue-400 transition-colors">
-                Library
               </Link>
               <Link href="/authors" className="text-gray-300 hover:text-purple-400 transition-colors">
                 Authors
@@ -120,19 +121,85 @@ function MyApp({ Component, pageProps }) {
               </Link>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <button className="hidden md:block px-4 py-2 text-gray-300 hover:text-white transition-colors">
-                Login
-              </button>
-              <button className="hidden md:block px-4 py-2 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 rounded-full text-sm font-medium transition-all duration-300">
-                Sign Up
-              </button>
-              <button className="md:hidden text-gray-300">
+            {/* Mobile Navigation - Always visible links for requested items */}
+            <div className="md:hidden flex items-center space-x-4">
+              <Link href="/" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors whitespace-nowrap">
+                Home
+              </Link>
+              <Link href="/stories" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors whitespace-nowrap">
+                Stories
+              </Link>
+              <Link href="/library" className="text-sm text-gray-300 hover:text-blue-400 transition-colors whitespace-nowrap">
+                Library
+              </Link>
+              
+              <button 
+                className="ml-2 text-gray-300"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
             </div>
+            
+            <div className="hidden md:flex items-center space-x-4">
+              <button className="px-4 py-2 text-gray-300 hover:text-white transition-colors">
+                Login
+              </button>
+              <button className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 rounded-full text-sm font-medium transition-all duration-300">
+                Sign Up
+              </button>
+            </div>
+            
+            {/* Full Mobile Menu */}
+            {mobileMenuOpen && (
+              <div className="md:hidden absolute top-16 left-0 right-0 bg-gray-900 border-b border-gray-800 py-4 z-50">
+                <div className="container mx-auto px-4 flex flex-col space-y-4">
+                  <Link 
+                    href="/image-stories" 
+                    className="text-gray-300 hover:text-purple-400 transition-colors py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Visual Stories
+                  </Link>
+                  <Link 
+                    href="/religious" 
+                    className="text-gray-300 hover:text-amber-400 transition-colors py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Religious
+                  </Link>
+                  <Link 
+                    href="/authors" 
+                    className="text-gray-300 hover:text-purple-400 transition-colors py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Authors
+                  </Link>
+                  <Link 
+                    href="/community" 
+                    className="text-gray-300 hover:text-green-400 transition-colors py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Community
+                  </Link>
+                  <Link 
+                    href="/membership" 
+                    className="text-gray-300 hover:text-orange-400 transition-colors py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Membership
+                  </Link>
+                  <button className="text-left text-gray-300 hover:text-white transition-colors py-2 block w-full text-left">
+                    Login
+                  </button>
+                  <button className="text-left px-4 py-2 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 rounded w-full text-left">
+                    Sign Up
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </nav>
@@ -184,11 +251,6 @@ function MyApp({ Component, pageProps }) {
                 <li>
                   <Link href="/image-stories" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     Visual Stories
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/premium-stories" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    Premium Stories
                   </Link>
                 </li>
                 <li>

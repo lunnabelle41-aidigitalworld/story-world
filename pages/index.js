@@ -378,7 +378,7 @@ export default function Home() {
                 </div>
               </button>
             </Link>
-            <Link href="/premium-stories">
+            <Link href="/stories">
               <button className="relative px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40 group overflow-hidden">
                 <span className="relative z-10">Premium Stories</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

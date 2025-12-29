@@ -213,7 +213,7 @@ export default function ImageStories() {
                 </span>
               </div>
               <div className="mt-8">
-                <Link href="/premium-stories">
+                <Link href="/stories">
                   <button className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
                     Experience Premium Visual Storytelling
                   </button>

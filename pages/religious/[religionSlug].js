@@ -16,7 +16,10 @@ export async function getStaticPaths() {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: false };
+  return { 
+    paths, 
+    fallback: 'blocking' // Changed to 'blocking' to handle 404s better
+  };
 }
 
 // This function gets called at build time to pre-render dynamic routes
@@ -27,41 +30,63 @@ export async function getStaticProps({ params }) {
   const religionInfo = {
     islam: { 
       name: 'Islamic Stories', 
+      slug: 'islam',
       description: 'Inspiring tales from Islamic tradition, including stories of prophets, companions, and spiritual wisdom.',
       icon: '☪️',
-      color: 'from-green-900 to-gray-900'
+      color: 'from-green-900 to-gray-900',
+      accentColor: 'green'
     },
     christianity: { 
-      name: 'Christian Stories', 
+      name: 'Christian Stories',
+      slug: 'christianity',
       description: 'Heartwarming narratives from Christian tradition, featuring parables, saints, and faith journeys.',
       icon: '✝️',
-      color: 'from-blue-900 to-gray-900'
+      color: 'from-blue-900 to-gray-900',
+      accentColor: 'blue'
     },
     hinduism: { 
-      name: 'Hindu Stories', 
+      name: 'Hindu Stories',
+      slug: 'hinduism',
       description: 'Ancient wisdom and divine tales from Hindu mythology, including epics and spiritual teachings.',
       icon: '🕉️',
-      color: 'from-orange-900 to-gray-900'
+      color: 'from-orange-900 to-gray-900',
+      accentColor: 'orange'
     },
     buddhism: { 
-      name: 'Buddhist Stories', 
+      name: 'Buddhist Stories',
+      slug: 'buddhism',
       description: 'Enlightening stories of compassion, mindfulness, and the path to awakening.',
       icon: '☸️',
-      color: 'from-yellow-900 to-gray-900'
+      color: 'from-yellow-900 to-gray-900',
+      accentColor: 'yellow'
     },
     judaism: { 
       name: 'Jewish Stories', 
+      slug: 'judaism',
       description: 'Rich traditions and timeless tales from Jewish heritage and sacred texts.',
       icon: '✡️',
-      color: 'from-indigo-900 to-gray-900'
+      color: 'from-indigo-900 to-gray-900',
+      accentColor: 'indigo'
     },
     sikhism: { 
-      name: 'Sikh Stories', 
+      name: 'Sikh Stories',
+      slug: 'sikhism',
       description: 'Stories of courage, devotion, and spiritual enlightenment from Sikh tradition.',
       icon: '☬',
-      color: 'from-amber-900 to-gray-900'
+      color: 'from-amber-900 to-gray-900',
+      accentColor: 'amber'
     }
   };
+
+  // Check if the religion slug is valid
+  if (!religionInfo[religionSlug]) {
+    return {
+      notFound: true // This will trigger the 404 page
+    };
+  }
+
+  // Get the current religion's info
+  const currentReligion = religionInfo[religionSlug];
 
   // Mock religious stories data (in a real implementation, this would come from a database)
   const religiousStoriesData = {
