@@ -19,9 +19,18 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
+        async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8040019263366199"
-        crossOrigin="anonymous"
+        crossorigin="anonymous"
         strategy="beforeInteractive"
+      />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          `
+        }}
+        strategy="afterInteractive"
       />
       <Script
         src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
@@ -204,7 +213,14 @@ function MyApp({ Component, pageProps }) {
         </div>
       </nav>
       
-      <Component {...pageProps} />
+      <div>
+              <ins className="adsbygoogle"
+                   style={{display: "block"}}
+                   data-ad-format="autorelaxed"
+                   data-ad-client="ca-pub-8040019263366199"
+                   data-ad-slot="6052662551"></ins>
+              <Component {...pageProps} />
+            </div>
       
       {/* Professional Footer */}
       <footer className="bg-gray-900 border-t border-gray-800 pt-16 pb-8">
