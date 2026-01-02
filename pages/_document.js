@@ -12,6 +12,16 @@ export default function Document() {
         ></script>
       </Head>
       <body>
+        <div id="ad-container">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-format="autorelaxed"
+               data-ad-client="ca-pub-8040019263366199"
+               data-ad-slot="6052662551"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
         <Main />
         <NextScript />
       </body>
