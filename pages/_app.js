@@ -8,6 +8,15 @@ function MyApp({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
+  // Initialize AdSense when component mounts
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('Adsense error:', err);
+    }
+  }, []);
+  
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -203,6 +212,18 @@ function MyApp({ Component, pageProps }) {
           </div>
         </div>
       </nav>
+      
+      {/* Google AdSense Unit */}
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-center">
+          <ins className="adsbygoogle"
+               style={{display: "block"}}
+               data-ad-format="autorelaxed"
+               data-ad-client="ca-pub-8040019263366199"
+               data-ad-slot="6052662551">
+          </ins>
+        </div>
+      </div>
       
       <Component {...pageProps} />
       
