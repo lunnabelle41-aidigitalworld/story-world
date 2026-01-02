@@ -15,6 +15,20 @@ function MyApp({ Component, pageProps }) {
     } catch (err) {
       console.error('Adsense error:', err);
     }
+    
+    // Additional check to ensure ads load
+    const interval = setInterval(() => {
+      if (window.adsbygoogle && document.querySelector('.adsbygoogle')) {
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (err) {
+          console.error('Adsense error on retry:', err);
+        }
+        clearInterval(interval);
+      }
+    }, 1000);
+    
+    return () => clearInterval(interval);
   }, []);
   
   useEffect(() => {
@@ -218,9 +232,10 @@ function MyApp({ Component, pageProps }) {
         <div className="flex justify-center">
           <ins className="adsbygoogle"
                style={{display: "block"}}
-               data-ad-format="autorelaxed"
                data-ad-client="ca-pub-8040019263366199"
-               data-ad-slot="6052662551">
+               data-ad-slot="6052662551"
+               data-ad-format="autorelaxed"
+               data-full-width-responsive="true">
           </ins>
         </div>
       </div>
