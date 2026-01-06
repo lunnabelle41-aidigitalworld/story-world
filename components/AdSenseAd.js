@@ -42,7 +42,7 @@ const AdSenseAd = ({
       <ins
         className="adsbygoogle"
         style={style}
-        data-ad-client="ca-pub-8040019263366199"
+        data-ad-client="ca-pub-2894915343289598"
         data-ad-slot={slot}
         data-ad-format={format}
       ></ins>

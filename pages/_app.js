@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8040019263366199"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2894915343289598"
         crossOrigin="anonymous"
         strategy="beforeInteractive"
       />
@@ -232,7 +232,7 @@ function MyApp({ Component, pageProps }) {
         <div className="flex justify-center">
           <ins className="adsbygoogle"
                style={{display: "block"}}
-               data-ad-client="ca-pub-8040019263366199"
+               data-ad-client="ca-pub-2894915343289598"
                data-ad-slot="6052662551"
                data-ad-format="autorelaxed"
                data-full-width-responsive="true">

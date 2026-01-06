@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const DOMAIN = 'https://story-world-delta.vercel.app';
+const DOMAIN = 'https://wander-world-six.vercel.app';
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 
 try {

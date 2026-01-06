@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://story-world-delta.vercel.app/sitemap.xml
+Sitemap: https://wander-world-six.vercel.app/sitemap.xml

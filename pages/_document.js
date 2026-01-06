@@ -4,10 +4,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="google-site-verification" content="_xAnSYTjZ9yWZeJ4e2YXlHtZ7Of6p3A5TFCMbgDeO-I" />
+        <meta name="google-site-verification" content="f08c47fec0942fa0" />
         <script 
           async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8040019263366199" 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2894915343289598" 
           crossOrigin="anonymous"
         ></script>
       </Head>

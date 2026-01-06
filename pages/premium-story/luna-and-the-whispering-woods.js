@@ -25,7 +25,7 @@ export default function LunaAndTheWhisperingWoods() {
               className="adsbygoogle"
               style={{ display: 'block' }}
               data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-8040019263366199"
+              data-ad-client="ca-pub-2894915343289598"
               data-ad-slot="2228311077"
             ></ins>
           </div>
@@ -147,7 +147,7 @@ export default function LunaAndTheWhisperingWoods() {
               className="adsbygoogle"
               style={{ display: 'block' }}
               data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-8040019263366199"
+              data-ad-client="ca-pub-2894915343289598"
               data-ad-slot="2228311077"
             ></ins>
           </div>
