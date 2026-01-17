@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
-// Dynamically import AdSenseAd component
-const AdSenseAd = dynamic(() => import('../components/AdSenseAd'), { ssr: false });
+// AdSenseAd component removed for compliance
+// const AdSenseAd = dynamic(() => import('../components/AdSenseAd'), { ssr: false });
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -261,9 +261,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
-      {/* Header Ad */}
+      {/* Removed Header Ad for compliance */}
       <div className="container mx-auto px-4 py-4">
-        <AdSenseAd slot="2228311077" />
+        {/* Ad space removed */}
       </div>
       <Head>
         <title>Nexus | The World's Premier Futuristic Storytelling Platform</title>
@@ -531,9 +531,9 @@ export default function Home() {
             ))}
           </div>
           
-          {/* Second Ad Placement - Middle of Featured Stories */}
+          {/* Removed Second Ad Placement for compliance */}
           <div className="w-full mt-12 mb-4">
-            <AdSenseAd slot="9340514332" className="my-12" />
+            {/* Ad space removed */}
           </div>
           
         </div>
@@ -789,27 +789,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Third Ad Placement - Before Footer */}
+      {/* Removed Third Ad Placement for compliance */}
       <div className="py-12 bg-gray-900/50">
         <div className="container mx-auto px-4">
-          <AdSenseAd 
-            slot="9340514332" 
-            format="auto"
-            className="my-12"
-            style={{ display: 'block', minHeight: '280px' }}
-          />
+          {/* Ad space removed */}
         </div>
       </div>
       
-      {/* Footer Ad */}
+      {/* Removed Footer Ad for compliance */}
       <div className="py-12 bg-gray-900/50">
         <div className="container mx-auto px-4">
-          <AdSenseAd 
-            slot="2228311077" 
-            format="auto"
-            className="my-12"
-            style={{ display: 'block', minHeight: '280px' }}
-          />
+          {/* Ad space removed */}
         </div>
       </div>
     

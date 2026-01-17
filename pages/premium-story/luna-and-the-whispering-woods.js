@@ -18,18 +18,7 @@ export default function LunaAndTheWhisperingWoods() {
       </Head>
 
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Header Ad - Only show if component is mounted */}
-        {isMounted && (
-          <div className="my-8">
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-2894915343289598"
-              data-ad-slot="2228311077"
-            ></ins>
-          </div>
-        )}
+        {/* Removed Header Ad for compliance */}
 
         <article className="prose prose-invert prose-lg max-w-none">
           <header className="mb-12 text-center">
@@ -140,18 +129,7 @@ export default function LunaAndTheWhisperingWoods() {
           </Link>
         </div>
 
-        {/* Footer Ad - Only show if component is mounted */}
-        {isMounted && (
-          <div className="my-12">
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-2894915343289598"
-              data-ad-slot="2228311077"
-            ></ins>
-          </div>
-        )}
+        {/* Removed Footer Ad for compliance */}
       </div>
     </div>
   );

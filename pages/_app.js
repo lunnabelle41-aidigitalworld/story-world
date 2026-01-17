@@ -8,27 +8,9 @@ function MyApp({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  // Initialize AdSense when component mounts
+  // Initialize effects when component mounts
   useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.error('Adsense error:', err);
-    }
-    
-    // Additional check to ensure ads load
-    const interval = setInterval(() => {
-      if (window.adsbygoogle && document.querySelector('.adsbygoogle')) {
-        try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (err) {
-          console.error('Adsense error on retry:', err);
-        }
-        clearInterval(interval);
-      }
-    }, 1000);
-    
-    return () => clearInterval(interval);
+    // Removed AdSense initialization for compliance
   }, []);
   
   useEffect(() => {
@@ -41,11 +23,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2894915343289598"
-        crossOrigin="anonymous"
-        strategy="beforeInteractive"
-      />
+      {/* Removed AdSense script for compliance */}
+      {/* Removed AdSense script for compliance */}
       <Script
         src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
         strategy="beforeInteractive"
@@ -227,18 +206,9 @@ function MyApp({ Component, pageProps }) {
         </div>
       </nav>
       
-      {/* Google AdSense Unit */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-center">
-          <ins className="adsbygoogle"
-               style={{display: "block"}}
-               data-ad-client="ca-pub-2894915343289598"
-               data-ad-slot="6052662551"
-               data-ad-format="autorelaxed"
-               data-full-width-responsive="true">
-          </ins>
-        </div>
-      </div>
+      {/* Removed Google AdSense Unit for compliance */}
+      {/* Removed Google AdSense Unit for compliance */}
+      
       
       <Component {...pageProps} />
       
